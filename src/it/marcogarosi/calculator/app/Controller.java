@@ -9,25 +9,50 @@ import javafx.scene.control.Label;
 
 public class Controller {
 
+    /**
+     * The calculator "display"
+     */
     @FXML
     private Label display;
 
+    /**
+     * Maximum number of digits that can be displayed.
+     */
     private final int DISPLAY_NUMBER_MAX_LEN = 9;
 
+    /**
+     * The operation to execute
+     */
     private Operation operation;
+
+    /**
+     * Current user input
+     */
     private String input;
+
+    /**
+     * Support variable. It is true when last performed action is pressing "="
+     */
     private boolean equalsWasPressed;
 
+    /**
+     * Creates a new Controller
+     */
     public Controller() {
         input = "";
         operation = new Operation();
         equalsWasPressed = false;
     }
 
+    /**
+     * A digit button has been pressed. It composes the input
+     * @param event The event containing a reference to the source (which button was actually pressed)
+     */
     @FXML
     private void digitPressed(ActionEvent event) {
         Button button = (Button) event.getSource();
 
+        // Last action performed is pressing the "=" button
         if (equalsWasPressed) {
             input = "";
             operation = new Operation();
@@ -44,6 +69,10 @@ public class Controller {
         display.setText(input);
     }
 
+    /**
+     * Add the operator to the operation that has to be performed.
+     * @param event The event containing a reference to the source (which button was actually pressed)
+     */
     @FXML
     private void operatorPressed(ActionEvent event) {
         Button button = (Button) event.getSource();
@@ -62,6 +91,7 @@ public class Controller {
 
         addInput();
 
+        // The operation can be performed because there are already two numbers
         if (operation.isFull()) {
             display.setText(operation.apply().toString());
             operation = new Operation(operation.apply());
@@ -73,6 +103,12 @@ public class Controller {
         input = "";
     }
 
+    /**
+     * Perform the operation. If no operator was specified by the user it displays the available input.
+     * It stores the result in a new operation, so that the user can chain them without entering the
+     * result every time.
+     * @param event The event containing a reference to the source (which button was actually pressed)
+     */
     @FXML
     private void equalsPressed(ActionEvent event) {
 
@@ -99,6 +135,10 @@ public class Controller {
         operation = new Operation(operation.apply());
     }
 
+    /**
+     * Clear the screen and the input. It behaves as the "AC" button on common calculators
+     * @param event The event containing a reference to the source (which button was actually pressed)
+     */
     @FXML
     private void clearPressed(ActionEvent event) {
         input = "";
@@ -108,6 +148,10 @@ public class Controller {
         display.setText(input);
     }
 
+    /**
+     * Delete the last digit in the input and update the view
+     * @param event The event containing a reference to the source (which button was actually pressed)
+     */
     @FXML
     private void deleteDigit(ActionEvent event) {
         if (input == null || input.length() == 0)
@@ -117,6 +161,11 @@ public class Controller {
         display.setText(input);
     }
 
+    /**
+     * Add the input to the operation. It does not handle all the exceptions because many are non-critic and do
+     * not impact on the result; those are much like "warnings" and in some cases they could be really helpful.
+     * That is not the case, though, so they are "ignored"
+     */
     private void addInput() {
         try {
             operation.addInput(Double.parseDouble(input));
@@ -126,7 +175,6 @@ public class Controller {
             display.setText("0");
         } catch (IllegalStateException e) {
         } catch (Exception e) {
-
         }
     }
 
