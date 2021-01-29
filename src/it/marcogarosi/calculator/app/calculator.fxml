@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.marcogarosi.calculator.app.Controller">
+   <children>
+
+      <Label fx:id="display" layoutX="15.0" layoutY="25.0" prefHeight="90.0" prefWidth="270.0" style="-fx-background-color: #add8e6; -fx-padding: 10px;" textFill="#000568">
+         <font>
+            <Font name="Courier" size="37.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+
+      <!-- Numbers -->
+
+      <!-- 0 -->
+      <Button fx:id="digit0" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="430.0" mnemonicParsing="false" onAction="#digitPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="0" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- 1 -->
+      <Button fx:id="digit1" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="360.0" mnemonicParsing="false" onAction="#digitPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="1" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- 2 -->
+      <Button fx:id="digit2" alignment="CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="360.0" mnemonicParsing="false" onAction="#digitPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="2" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- 3 -->
+      <Button fx:id="digit3" alignment="CENTER" contentDisplay="CENTER" layoutX="160.0" layoutY="360.0" mnemonicParsing="false" onAction="#digitPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="3" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- 4 -->
+      <Button fx:id="digit4" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="290.0" mnemonicParsing="false" onAction="#digitPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="4" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- 5 -->
+      <Button fx:id="digit5" alignment="CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="290.0" mnemonicParsing="false" onAction="#digitPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="5" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- 6 -->
+      <Button fx:id="digit6" alignment="CENTER" contentDisplay="CENTER" layoutX="160.0" layoutY="290.0" mnemonicParsing="false" onAction="#digitPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="6" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- 7 -->
+      <Button fx:id="digit7" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="220.0" mnemonicParsing="false" onAction="#digitPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="7" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- 8 -->
+      <Button fx:id="digit8" alignment="CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="220.0" mnemonicParsing="false" onAction="#digitPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="8" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- 9 -->
+      <Button fx:id="digit9" alignment="CENTER" contentDisplay="CENTER" layoutX="160.0" layoutY="220.0" mnemonicParsing="false" onAction="#digitPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="9" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- Operations -->
+
+      <!-- + -->
+      <Button fx:id="SUM" alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="290.0" mnemonicParsing="false" onAction="#operatorPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 120px; -fx-max-height: 120px;" text="+" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- * -->
+      <Button fx:id="MULTIPLICATION" alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="220.0" mnemonicParsing="false" onAction="#operatorPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="*" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- - -->
+      <Button fx:id="SUBTRACTION" alignment="CENTER" contentDisplay="CENTER" layoutX="160.0" layoutY="150.0" mnemonicParsing="false" onAction="#operatorPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="-" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- / -->
+      <Button fx:id="DIVISION" alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="150.0" mnemonicParsing="false" onAction="#operatorPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="/" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- . -->
+      <Button fx:id="DOT" alignment="CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="430.0" mnemonicParsing="false" onAction="#digitPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="." textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- = -->
+      <Button fx:id="EQUALS" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="160.0" layoutY="430.0" mnemonicParsing="false" onAction="#equalsPressed" style="-fx-background-color: black; -fx-max-width: 120px; -fx-min-width: 120px; -fx-min-height: 50px; -fx-max-height: 50px;" text="=" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- AC -->
+      <Button fx:id="AC" alignment="CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="150.0" mnemonicParsing="false" onAction="#clearPressed" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="C" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+      <!-- Back (<) -->
+      <Button fx:id="BACK" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="150.0" mnemonicParsing="false" onAction="#deleteDigit" style="-fx-background-color: black; -fx-max-width: 50px; -fx-min-width: 50px; -fx-min-height: 50px; -fx-max-height: 50px;" text="&lt;" textAlignment="CENTER" textFill="#bfbfbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+
+   </children>
+</Pane>
